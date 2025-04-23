@@ -18,7 +18,7 @@ export const registerUser = async (req, res, next) => {
     };
     //Check if the user doesnt have an account already
     const user = await UserModel.findOne({
-        $or: [{ username: value.username }, { email: value.emal }]
+        $or: [{ username: value.username }, { email: value.email }]
     });
     if (user) {
         return res.status(409).json('User already exists!');
